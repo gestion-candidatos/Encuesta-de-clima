@@ -642,19 +642,19 @@
 
         fetch(APPS_SCRIPT_URL, {
           method: "POST",
-          // text/plain evita el preflight CORS que Apps Script no responde bien
+          mode: "no-cors",
+          // no-cors + text/plain: Apps Script redirige internamente su respuesta a
+          // otro dominio (googleusercontent.com) sin headers CORS, así que el
+          // navegador no nos deja LEER la respuesta igual. Confirmamos que el envío
+          // salió bien (no hubo error de red) y mostramos agradecimiento; si falla
+          // por código incorrecto ya no lo vamos a poder avisar en pantalla, pero como
+          // el código viaja siempre dentro del link que comparte RRHH, en la práctica
+          // no debería pasar.
           headers: { "Content-Type": "text/plain;charset=utf-8" },
           body: JSON.stringify({ tipo: TIPO_FORMULARIO, codigo: CODIGO_ACCESO, respuestas: respuestas })
         })
-          .then(function(res) { return res.json(); })
-          .then(function(data) {
-            if (data && data.ok) {
-              mostrarAgradecimiento();
-            } else {
-              alert("Hubo un error al enviar tu respuesta" + (data && data.error ? ": " + data.error : ".") + " Por favor, intentá nuevamente.");
-              boton.disabled = false;
-              boton.innerText = "Enviar respuesta";
-            }
+          .then(function() {
+            mostrarAgradecimiento();
           })
           .catch(function(err) {
             alert("Hubo un error al enviar tu respuesta. Por favor, intentá nuevamente.");
