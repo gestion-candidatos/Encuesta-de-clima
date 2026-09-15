@@ -99,6 +99,13 @@
         margin: 0 0 20px 0;
       }
 
+      .descripcion-seccion {
+        font-size: 13px;
+        color: var(--color-gris);
+        line-height: 1.5;
+        margin: -12px 0 20px 0;
+      }
+
       .pregunta {
         margin-bottom: 24px;
       }
@@ -694,6 +701,91 @@
             </div>
           </div>
 
+          <h2>Preguntas Focus</h2>
+          <p class="descripcion-seccion">¿Cómo considerás que es Grupo Fabric en estos puntos? Calificá de 1 a 5, siendo 1 lo más bajo y 5 lo más alto.</p>
+
+          <div class="pregunta" data-obligatorio="true" data-pregunta="Q_Focus_Beneficios">
+            <label class="titulo-pregunta">Beneficios (Flexibilidad, Home Office, Reembolso, Almuerzo)</label>
+            <div class="opciones-pill">
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_Beneficios&#39;,&#39;1&#39;,this)">1</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_Beneficios&#39;,&#39;2&#39;,this)">2</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_Beneficios&#39;,&#39;3&#39;,this)">3</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_Beneficios&#39;,&#39;4&#39;,this)">4</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_Beneficios&#39;,&#39;5&#39;,this)">5</div>
+            </div>
+          </div>
+
+          <div class="pregunta" data-obligatorio="true" data-pregunta="Q_Focus_Capacitaciones">
+            <label class="titulo-pregunta">Capacitaciones</label>
+            <div class="opciones-pill">
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_Capacitaciones&#39;,&#39;1&#39;,this)">1</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_Capacitaciones&#39;,&#39;2&#39;,this)">2</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_Capacitaciones&#39;,&#39;3&#39;,this)">3</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_Capacitaciones&#39;,&#39;4&#39;,this)">4</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_Capacitaciones&#39;,&#39;5&#39;,this)">5</div>
+            </div>
+          </div>
+
+          <div class="pregunta" data-obligatorio="true" data-pregunta="Q_Focus_Crecimiento">
+            <label class="titulo-pregunta">Oportunidad de crecimiento</label>
+            <div class="opciones-pill">
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_Crecimiento&#39;,&#39;1&#39;,this)">1</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_Crecimiento&#39;,&#39;2&#39;,this)">2</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_Crecimiento&#39;,&#39;3&#39;,this)">3</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_Crecimiento&#39;,&#39;4&#39;,this)">4</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_Crecimiento&#39;,&#39;5&#39;,this)">5</div>
+            </div>
+          </div>
+
+          <div class="pregunta" data-obligatorio="true" data-pregunta="Q_Focus_Salario">
+            <label class="titulo-pregunta">Salario</label>
+            <div class="opciones-pill">
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_Salario&#39;,&#39;1&#39;,this)">1</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_Salario&#39;,&#39;2&#39;,this)">2</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_Salario&#39;,&#39;3&#39;,this)">3</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_Salario&#39;,&#39;4&#39;,this)">4</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_Salario&#39;,&#39;5&#39;,this)">5</div>
+            </div>
+          </div>
+
+          <div class="pregunta" data-obligatorio="true" data-pregunta="Q_Focus_TrabajoEquipo">
+            <label class="titulo-pregunta">Trabajo en equipo</label>
+            <div class="opciones-pill">
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_TrabajoEquipo&#39;,&#39;1&#39;,this)">1</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_TrabajoEquipo&#39;,&#39;2&#39;,this)">2</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_TrabajoEquipo&#39;,&#39;3&#39;,this)">3</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_TrabajoEquipo&#39;,&#39;4&#39;,this)">4</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_TrabajoEquipo&#39;,&#39;5&#39;,this)">5</div>
+            </div>
+          </div>
+
+          <div class="pregunta" data-obligatorio="true" data-pregunta="Q_Focus_UsoIA">
+            <label class="titulo-pregunta">¿Con qué frecuencia utilizás la inteligencia artificial?</label>
+            <div class="opciones-pill">
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_UsoIA&#39;,&#39;Mucha frecuencia&#39;,this)">Mucha frecuencia</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_UsoIA&#39;,&#39;Frecuencia Moderada&#39;,this)">Frecuencia Moderada</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_UsoIA&#39;,&#39;Baja Frecuencia&#39;,this)">Baja Frecuencia</div>
+            </div>
+          </div>
+
+          <div class="bloque-condicional" id="grupo-uso-ia-porque" style="display:none;">
+            <div class="pregunta">
+              <label class="titulo-pregunta">¿Por qué? <span class="nota-opcional">(opcional)</span></label>
+              <textarea class="campo-textarea" onchange="guardarTexto(&#39;Q_Focus_UsoIA_PorQue&#39;, this.value)"></textarea>
+            </div>
+          </div>
+
+          <div class="pregunta" data-obligatorio="true" data-pregunta="Q_Focus_ImportanciaIA">
+            <label class="titulo-pregunta">¿Qué tan importante es la inteligencia artificial en tu día a día?</label>
+            <div class="opciones-pill">
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_ImportanciaIA&#39;,&#39;1&#39;,this)">1</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_ImportanciaIA&#39;,&#39;2&#39;,this)">2</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_ImportanciaIA&#39;,&#39;3&#39;,this)">3</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_ImportanciaIA&#39;,&#39;4&#39;,this)">4</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_ImportanciaIA&#39;,&#39;5&#39;,this)">5</div>
+            </div>
+          </div>
+
           <div class="pregunta">
             <label class="titulo-pregunta">Por último, ¿querés dejarnos algún comentario positivo? <span class="nota-opcional">(opcional)</span></label>
             <textarea class="campo-textarea" onchange="guardarTexto(&#39;Q_ComentarioPositivo&#39;, this.value)"></textarea>
@@ -801,6 +893,10 @@
         const valorComunicacion = respuestas.Q_ComunicacionInterna;
         const mostrarComunicacionPorque = valorComunicacion === "Mala" || valorComunicacion === "Muy mala";
         document.getElementById("grupo-comunicacion-porque").style.display = mostrarComunicacionPorque ? "block" : "none";
+
+        const valorUsoIA = respuestas.Q_Focus_UsoIA;
+        const mostrarUsoIAPorque = valorUsoIA === "Baja Frecuencia";
+        document.getElementById("grupo-uso-ia-porque").style.display = mostrarUsoIAPorque ? "block" : "none";
       }
 
       function irAPaso(numero) {
