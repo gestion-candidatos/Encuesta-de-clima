@@ -287,7 +287,7 @@
         background-size: cover;
         background-position: center;
         opacity: 0;
-        transition: opacity 1.4s ease;
+        transition: opacity 1s ease;
       }
 
       #pantalla-inicio .inicio-imagen .carrusel-slide.activa {
@@ -880,7 +880,7 @@
           slides[indiceActual].classList.remove("activa");
           indiceActual = (indiceActual + 1) % slides.length;
           slides[indiceActual].classList.add("activa");
-        }, 4500);
+        }, 3000);
       })();
 
       const respuestas = {};
