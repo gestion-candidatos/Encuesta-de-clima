@@ -459,7 +459,7 @@
 
         <!-- ===================== PASO 1: DATOS DEMOGRÁFICOS ===================== -->
         <div class="paso activo" id="paso-1">
-          <h2>Sobre vos</h2>
+          <h2>Métricas Generales</h2>
 
           <div class="pregunta" data-obligatorio="true" data-pregunta="Genero">
             <label class="titulo-pregunta">Género</label>
@@ -504,7 +504,7 @@
 
         <!-- ===================== PASO 2: LIDERAZGO ===================== -->
         <div class="paso" id="paso-2">
-          <h2>Tu jefe y la dirección</h2>
+          <h2>Sobre vos</h2>
 
           <div class="pregunta" data-obligatorio="true" data-pregunta="Q_ClaridadResponsabilidades">
             <label class="titulo-pregunta">¿Tengo una idea clara de las responsabilidades de mi trabajo?</label>
@@ -514,6 +514,8 @@
               <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_ClaridadResponsabilidades&#39;,&#39;Casi nunca&#39;,this)">Casi nunca</div>
               <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_ClaridadResponsabilidades&#39;,&#39;Nunca&#39;,this)">Nunca</div></div>
           </div>
+
+          <h2>Tu jefe y la dirección</h2>
 
           <div class="pregunta" data-obligatorio="true" data-pregunta="Q_JefeInformaDesempeño">
             <label class="titulo-pregunta">¿Mi jefe me informa con frecuencia sobre mi desempeño para ayudarme a mejorar?</label>
@@ -540,6 +542,11 @@
               <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_ConfianzaDireccionEmpresa&#39;,&#39;A veces&#39;,this)">A veces</div>
               <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_ConfianzaDireccionEmpresa&#39;,&#39;Casi nunca&#39;,this)">Casi nunca</div>
               <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_ConfianzaDireccionEmpresa&#39;,&#39;Nunca&#39;,this)">Nunca</div></div>
+          </div>
+
+          <div class="pregunta">
+            <label class="titulo-pregunta">¿Quién o quiénes considerás que son? <span class="nota-opcional">(opcional)</span></label>
+            <textarea class="campo-textarea" onchange="guardarTexto(&#39;Q_ConfianzaDireccion_Quienes&#39;, this.value)"></textarea>
           </div>
 
           <div class="pregunta" data-obligatorio="true" data-pregunta="Q_ComunicacionAbiertaJefe">
@@ -574,12 +581,21 @@
               <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_ClimaEquipo&#39;,&#39;Muy mala&#39;,this)">Muy mala</div></div>
           </div>
 
+          <h2>Futuro Compañía</h2>
+
           <div class="pregunta" data-obligatorio="true" data-pregunta="Q_FuturoCompania">
             <label class="titulo-pregunta">En cuanto a mi futuro en la compañía...</label>
             <div class="opciones-pill">
               <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_FuturoCompania&#39;,&#39;Me veo trabajando aca en un corto plazo (- 1 año)&#39;,this)">Me veo acá en el corto plazo (- 1 año)</div>
               <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_FuturoCompania&#39;,&#39;Me veo trabajando aca en un largo plazo (+ 1 año)&#39;,this)">Me veo acá en el largo plazo (+ 1 año)</div>
               <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_FuturoCompania&#39;,&#39;No me veo trabajando aca proximamente&#39;,this)">No me veo trabajando acá próximamente</div>
+            </div>
+          </div>
+
+          <div class="bloque-condicional" id="grupo-futuro-factores" style="display:none;">
+            <div class="pregunta">
+              <label class="titulo-pregunta">¿Qué factores te harían tomar esta decisión? <span class="nota-opcional">(opcional)</span></label>
+              <textarea class="campo-textarea" onchange="guardarTexto(&#39;Q_FuturoCompania_Factores&#39;, this.value)"></textarea>
             </div>
           </div>
         </div>
@@ -597,6 +613,15 @@
               <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_CondicionesEdilicias&#39;,&#39;Muy mala&#39;,this)">Muy mala</div></div>
           </div>
 
+          <div class="bloque-condicional" id="grupo-edilicias-porque" style="display:none;">
+            <div class="pregunta">
+              <label class="titulo-pregunta">¿Por qué? <span class="nota-opcional">(opcional)</span></label>
+              <textarea class="campo-textarea" onchange="guardarTexto(&#39;Q_CondicionesEdilicias_PorQue&#39;, this.value)"></textarea>
+            </div>
+          </div>
+
+          <h2>Condiciones</h2>
+
           <div class="pregunta" data-obligatorio="true" data-pregunta="Q_SalarioCompetitivo">
             <label class="titulo-pregunta">En mi opinión, mi salario (sueldo total + beneficios) es bueno o competitivo en relación a otras empresas similares</label>
             <div class="opciones-pill"><div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_SalarioCompetitivo&#39;,&#39;De acuerdo&#39;,this)">De acuerdo</div>
@@ -606,6 +631,8 @@
               <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_SalarioCompetitivo&#39;,&#39;En desacuerdo&#39;,this)">En desacuerdo</div></div>
           </div>
 
+          <h2>Comunicación</h2>
+
           <div class="pregunta" data-obligatorio="true" data-pregunta="Q_ComunicacionInterna">
             <label class="titulo-pregunta">¿Cómo considerás que es la comunicación interna en cuanto a novedades / ingresos / egresos en la compañía?</label>
             <div class="opciones-pill"><div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_ComunicacionInterna&#39;,&#39;Muy buena&#39;,this)">Muy buena</div>
@@ -613,6 +640,13 @@
               <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_ComunicacionInterna&#39;,&#39;Aceptable&#39;,this)">Aceptable</div>
               <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_ComunicacionInterna&#39;,&#39;Mala&#39;,this)">Mala</div>
               <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_ComunicacionInterna&#39;,&#39;Muy mala&#39;,this)">Muy mala</div></div>
+          </div>
+
+          <div class="bloque-condicional" id="grupo-comunicacion-porque" style="display:none;">
+            <div class="pregunta">
+              <label class="titulo-pregunta">¿Por qué? <span class="nota-opcional">(opcional)</span></label>
+              <textarea class="campo-textarea" onchange="guardarTexto(&#39;Q_ComunicacionInterna_PorQue&#39;, this.value)"></textarea>
+            </div>
           </div>
         </div>
 
@@ -661,8 +695,13 @@
           </div>
 
           <div class="pregunta">
-            <label class="titulo-pregunta">Por último, ¿querés dejarnos algún comentario? <span class="nota-opcional">(opcional)</span></label>
-            <textarea class="campo-textarea" onchange="guardarTexto(&#39;Q_ComentarioFinal&#39;, this.value)"></textarea>
+            <label class="titulo-pregunta">Por último, ¿querés dejarnos algún comentario positivo? <span class="nota-opcional">(opcional)</span></label>
+            <textarea class="campo-textarea" onchange="guardarTexto(&#39;Q_ComentarioPositivo&#39;, this.value)"></textarea>
+          </div>
+
+          <div class="pregunta">
+            <label class="titulo-pregunta">¿Y algún comentario negativo? <span class="nota-opcional">(opcional)</span></label>
+            <textarea class="campo-textarea" onchange="guardarTexto(&#39;Q_ComentarioNegativo&#39;, this.value)"></textarea>
           </div>
         </div>
 
@@ -750,6 +789,18 @@
         const valorFalta = respuestas.Q_FaltaRespetoAgresion;
         const mostrarConflicto = valorFalta === "Siempre" || valorFalta === "Casi Siempre" || valorFalta === "A veces";
         document.getElementById("grupo-que-paso").style.display = mostrarConflicto ? "block" : "none";
+
+        const valorFuturo = respuestas.Q_FuturoCompania;
+        const mostrarFuturoFactores = valorFuturo === "Me veo trabajando aca en un corto plazo (- 1 año)" || valorFuturo === "No me veo trabajando aca proximamente";
+        document.getElementById("grupo-futuro-factores").style.display = mostrarFuturoFactores ? "block" : "none";
+
+        const valorEdilicias = respuestas.Q_CondicionesEdilicias;
+        const mostrarEdiliciasPorque = valorEdilicias === "Mala" || valorEdilicias === "Muy mala";
+        document.getElementById("grupo-edilicias-porque").style.display = mostrarEdiliciasPorque ? "block" : "none";
+
+        const valorComunicacion = respuestas.Q_ComunicacionInterna;
+        const mostrarComunicacionPorque = valorComunicacion === "Mala" || valorComunicacion === "Muy mala";
+        document.getElementById("grupo-comunicacion-porque").style.display = mostrarComunicacionPorque ? "block" : "none";
       }
 
       function irAPaso(numero) {
