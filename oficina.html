@@ -536,7 +536,7 @@
               <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_ClaridadResponsabilidades&#39;,&#39;Nunca&#39;,this)">Nunca</div></div>
           </div>
 
-          <h2>Tu jefe y la dirección</h2>
+          <h2>Mi jefe</h2>
 
           <div class="pregunta" data-obligatorio="true" data-pregunta="Q_JefeInformaDesempeño">
             <label class="titulo-pregunta">¿Mi jefe me informa con frecuencia sobre mi desempeño para ayudarme a mejorar?</label>
@@ -556,6 +556,22 @@
               <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_ConfianzaLiderazgoJefe&#39;,&#39;Nunca&#39;,this)">Nunca</div></div>
           </div>
 
+          <div class="pregunta" data-obligatorio="true" data-pregunta="Q_ComunicacionAbiertaJefe">
+            <label class="titulo-pregunta">¿Me siento capaz de comunicarle a mi jefe mis puntos de vista de manera abierta y sincera?</label>
+            <div class="opciones-pill"><div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_ComunicacionAbiertaJefe&#39;,&#39;Siempre&#39;,this)">Siempre</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_ComunicacionAbiertaJefe&#39;,&#39;Casi Siempre&#39;,this)">Casi siempre</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_ComunicacionAbiertaJefe&#39;,&#39;A veces&#39;,this)">A veces</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_ComunicacionAbiertaJefe&#39;,&#39;Casi nunca&#39;,this)">Casi nunca</div>
+              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_ComunicacionAbiertaJefe&#39;,&#39;Nunca&#39;,this)">Nunca</div></div>
+          </div>
+
+          <h2>Dirección</h2>
+
+          <div class="pregunta">
+            <label class="titulo-pregunta">¿Quiénes considerás que son los líderes de la dirección de esta compañía? <span class="nota-opcional">(opcional)</span></label>
+            <textarea class="campo-textarea" onchange="guardarTexto(&#39;Q_ConfianzaDireccion_Quienes&#39;, this.value)"></textarea>
+          </div>
+
           <div class="pregunta" data-obligatorio="true" data-pregunta="Q_ConfianzaDireccionEmpresa">
             <label class="titulo-pregunta">¿Confío en la dirección y liderazgo de la empresa?</label>
             <div class="opciones-pill"><div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_ConfianzaDireccionEmpresa&#39;,&#39;Siempre&#39;,this)">Siempre</div>
@@ -565,18 +581,11 @@
               <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_ConfianzaDireccionEmpresa&#39;,&#39;Nunca&#39;,this)">Nunca</div></div>
           </div>
 
-          <div class="pregunta">
-            <label class="titulo-pregunta">¿Quién o quiénes considerás que son? <span class="nota-opcional">(opcional)</span></label>
-            <textarea class="campo-textarea" onchange="guardarTexto(&#39;Q_ConfianzaDireccion_Quienes&#39;, this.value)"></textarea>
-          </div>
-
-          <div class="pregunta" data-obligatorio="true" data-pregunta="Q_ComunicacionAbiertaJefe">
-            <label class="titulo-pregunta">¿Me siento capaz de comunicarle a mi jefe mis puntos de vista de manera abierta y sincera?</label>
-            <div class="opciones-pill"><div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_ComunicacionAbiertaJefe&#39;,&#39;Siempre&#39;,this)">Siempre</div>
-              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_ComunicacionAbiertaJefe&#39;,&#39;Casi Siempre&#39;,this)">Casi siempre</div>
-              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_ComunicacionAbiertaJefe&#39;,&#39;A veces&#39;,this)">A veces</div>
-              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_ComunicacionAbiertaJefe&#39;,&#39;Casi nunca&#39;,this)">Casi nunca</div>
-              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_ComunicacionAbiertaJefe&#39;,&#39;Nunca&#39;,this)">Nunca</div></div>
+          <div class="bloque-condicional" id="grupo-direccion-porque" style="display:none;">
+            <div class="pregunta">
+              <label class="titulo-pregunta">Nos contás, ¿por qué? <span class="nota-opcional">(opcional)</span></label>
+              <textarea class="campo-textarea" onchange="guardarTexto(&#39;Q_ConfianzaDireccion_PorQue&#39;, this.value)"></textarea>
+            </div>
           </div>
         </div>
 
@@ -907,6 +916,10 @@
         const valorFalta = respuestas.Q_FaltaRespetoAgresion;
         const mostrarConflicto = valorFalta === "Siempre" || valorFalta === "Casi Siempre" || valorFalta === "A veces";
         document.getElementById("grupo-que-paso").style.display = mostrarConflicto ? "block" : "none";
+
+        const valorDireccion = respuestas.Q_ConfianzaDireccionEmpresa;
+        const mostrarDireccionPorque = valorDireccion === "A veces" || valorDireccion === "Casi nunca" || valorDireccion === "Nunca";
+        document.getElementById("grupo-direccion-porque").style.display = mostrarDireccionPorque ? "block" : "none";
 
         const valorFuturo = respuestas.Q_FuturoCompania;
         const mostrarFuturoFactores = valorFuturo === "Me veo trabajando aca en un corto plazo (- 1 año)" || valorFuturo === "No me veo trabajando aca proximamente";
