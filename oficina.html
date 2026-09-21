@@ -482,8 +482,8 @@
         <div class="paso activo" id="paso-1">
           <h2>Métricas Generales</h2>
 
-          <div class="pregunta" data-obligatorio="true" data-pregunta="Genero">
-            <label class="titulo-pregunta">Género</label>
+          <div class="pregunta" data-pregunta="Genero">
+            <label class="titulo-pregunta">Género <span class="nota-opcional">(opcional)</span></label>
             <div class="opciones-pill">
               <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Genero&#39;,&#39;Femenino&#39;,this)">Femenino</div>
               <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Genero&#39;,&#39;Masculino&#39;,this)">Masculino</div>
@@ -518,7 +518,6 @@
               <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Area&#39;,&#39;Administracion & Finanzas&#39;,this)">Administración &amp; Finanzas</div>
               <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Area&#39;,&#39;Marketing&#39;,this)">Marketing</div>
               <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Area&#39;,&#39;Desarrollo Comercial&#39;,this)">Desarrollo Comercial</div>
-              <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Area&#39;,&#39;Expansion&#39;,this)">Expansión</div>
             </div>
           </div>
         </div>
@@ -566,11 +565,6 @@
           </div>
 
           <h2>Dirección</h2>
-
-          <div class="pregunta">
-            <label class="titulo-pregunta">¿Quiénes considerás que son los líderes de la dirección de esta compañía? <span class="nota-opcional">(opcional)</span></label>
-            <textarea class="campo-textarea" onchange="guardarTexto(&#39;Q_ConfianzaDireccion_Quienes&#39;, this.value)"></textarea>
-          </div>
 
           <div class="pregunta" data-obligatorio="true" data-pregunta="Q_ConfianzaDireccionEmpresa">
             <label class="titulo-pregunta">¿Confío en la dirección y liderazgo de la empresa?</label>
@@ -650,7 +644,7 @@
             </div>
           </div>
 
-          <h2>Condiciones</h2>
+          <h2>Compensaciones</h2>
 
           <div class="pregunta" data-obligatorio="true" data-pregunta="Q_SalarioCompetitivo">
             <label class="titulo-pregunta">En mi opinión, mi salario (sueldo total + beneficios) es bueno o competitivo en relación a otras empresas similares</label>
@@ -738,6 +732,13 @@
             </div>
           </div>
 
+          <div class="bloque-condicional" id="grupo-focus-beneficios-porque" style="display:none;">
+            <div class="pregunta">
+              <label class="titulo-pregunta">Nos contás, ¿por qué? <span class="nota-opcional">(opcional)</span></label>
+              <textarea class="campo-textarea" onchange="guardarTexto(&#39;Q_Focus_Beneficios_PorQue&#39;, this.value)"></textarea>
+            </div>
+          </div>
+
           <div class="pregunta" data-obligatorio="true" data-pregunta="Q_Focus_Capacitaciones">
             <label class="titulo-pregunta">Capacitaciones</label>
             <div class="opciones-pill">
@@ -746,6 +747,13 @@
               <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_Capacitaciones&#39;,&#39;3&#39;,this)">3</div>
               <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_Capacitaciones&#39;,&#39;4&#39;,this)">4</div>
               <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_Capacitaciones&#39;,&#39;5&#39;,this)">5</div>
+            </div>
+          </div>
+
+          <div class="bloque-condicional" id="grupo-focus-capacitaciones-porque" style="display:none;">
+            <div class="pregunta">
+              <label class="titulo-pregunta">Nos contás, ¿por qué? <span class="nota-opcional">(opcional)</span></label>
+              <textarea class="campo-textarea" onchange="guardarTexto(&#39;Q_Focus_Capacitaciones_PorQue&#39;, this.value)"></textarea>
             </div>
           </div>
 
@@ -760,6 +768,13 @@
             </div>
           </div>
 
+          <div class="bloque-condicional" id="grupo-focus-crecimiento-porque" style="display:none;">
+            <div class="pregunta">
+              <label class="titulo-pregunta">Nos contás, ¿por qué? <span class="nota-opcional">(opcional)</span></label>
+              <textarea class="campo-textarea" onchange="guardarTexto(&#39;Q_Focus_Crecimiento_PorQue&#39;, this.value)"></textarea>
+            </div>
+          </div>
+
           <div class="pregunta" data-obligatorio="true" data-pregunta="Q_Focus_Salario">
             <label class="titulo-pregunta">Salario</label>
             <div class="opciones-pill">
@@ -771,6 +786,13 @@
             </div>
           </div>
 
+          <div class="bloque-condicional" id="grupo-focus-salario-porque" style="display:none;">
+            <div class="pregunta">
+              <label class="titulo-pregunta">Nos contás, ¿por qué? <span class="nota-opcional">(opcional)</span></label>
+              <textarea class="campo-textarea" onchange="guardarTexto(&#39;Q_Focus_Salario_PorQue&#39;, this.value)"></textarea>
+            </div>
+          </div>
+
           <div class="pregunta" data-obligatorio="true" data-pregunta="Q_Focus_TrabajoEquipo">
             <label class="titulo-pregunta">Trabajo en equipo</label>
             <div class="opciones-pill">
@@ -779,6 +801,13 @@
               <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_TrabajoEquipo&#39;,&#39;3&#39;,this)">3</div>
               <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_TrabajoEquipo&#39;,&#39;4&#39;,this)">4</div>
               <div class="opcion-pill" onclick="seleccionarOpcion(&#39;Q_Focus_TrabajoEquipo&#39;,&#39;5&#39;,this)">5</div>
+            </div>
+          </div>
+
+          <div class="bloque-condicional" id="grupo-focus-trabajoequipo-porque" style="display:none;">
+            <div class="pregunta">
+              <label class="titulo-pregunta">Nos contás, ¿por qué? <span class="nota-opcional">(opcional)</span></label>
+              <textarea class="campo-textarea" onchange="guardarTexto(&#39;Q_Focus_TrabajoEquipo_PorQue&#39;, this.value)"></textarea>
             </div>
           </div>
 
@@ -809,13 +838,20 @@
             </div>
           </div>
 
+          <div class="bloque-condicional" id="grupo-focus-importanciaia-porque" style="display:none;">
+            <div class="pregunta">
+              <label class="titulo-pregunta">Nos contás, ¿por qué? <span class="nota-opcional">(opcional)</span></label>
+              <textarea class="campo-textarea" onchange="guardarTexto(&#39;Q_Focus_ImportanciaIA_PorQue&#39;, this.value)"></textarea>
+            </div>
+          </div>
+
           <div class="pregunta">
-            <label class="titulo-pregunta">Por último, ¿querés dejarnos algún comentario positivo? <span class="nota-opcional">(opcional)</span></label>
+            <label class="titulo-pregunta">Por último, ¿qué destacarías de la compañía? <span class="nota-opcional">(opcional)</span></label>
             <textarea class="campo-textarea" onchange="guardarTexto(&#39;Q_ComentarioPositivo&#39;, this.value)"></textarea>
           </div>
 
           <div class="pregunta">
-            <label class="titulo-pregunta">¿Y algún comentario negativo? <span class="nota-opcional">(opcional)</span></label>
+            <label class="titulo-pregunta">¿Y qué cosas considerás que debe mejorar la compañía? <span class="nota-opcional">(opcional)</span></label>
             <textarea class="campo-textarea" onchange="guardarTexto(&#39;Q_ComentarioNegativo&#39;, this.value)"></textarea>
           </div>
         </div>
@@ -936,6 +972,20 @@
         const valorUsoIA = respuestas.Q_Focus_UsoIA;
         const mostrarUsoIAPorque = valorUsoIA === "Baja Frecuencia";
         document.getElementById("grupo-uso-ia-porque").style.display = mostrarUsoIAPorque ? "block" : "none";
+
+        const focusBajos = ["1", "2"];
+        const mapaFocusPorque = {
+          "Q_Focus_Beneficios": "grupo-focus-beneficios-porque",
+          "Q_Focus_Capacitaciones": "grupo-focus-capacitaciones-porque",
+          "Q_Focus_Crecimiento": "grupo-focus-crecimiento-porque",
+          "Q_Focus_Salario": "grupo-focus-salario-porque",
+          "Q_Focus_TrabajoEquipo": "grupo-focus-trabajoequipo-porque",
+          "Q_Focus_ImportanciaIA": "grupo-focus-importanciaia-porque"
+        };
+        Object.keys(mapaFocusPorque).forEach(function(clave) {
+          const mostrar = focusBajos.indexOf(respuestas[clave]) !== -1;
+          document.getElementById(mapaFocusPorque[clave]).style.display = mostrar ? "block" : "none";
+        });
       }
 
       function irAPaso(numero) {
